@@ -38,28 +38,28 @@ A message can carry a condition based on itself and other messages received by a
   find all articles are funded by or refer to articles funded by and that include authors
   from a third party list.
   
- Each of these problems could potentially have millions of nodes satisfying 
- some of the conditions. Finding bodes that directly satisfy a given criteria 
- is a solved problem that  can be easily handled by relational databases 
- or  search engines like ElasticSearch.  Graph based searches can provide 
- list of liked candidates that themselves could be in millions. The problem
- could be reduced to intersections of huge sets.
- 
- One can deal with problems like these by streaming.  Each set of nodes can be identified
- in an traditional external system and the results can be streamed to graph, generating 
- an appropriate graph message for each marked node.
- 
- At the firs glance using graph as network of messages seems to not have any benefits. It does not provide
- a magical reduction of needed processing, at least not in generic cases. But still there are
- benefits:
- 1. All the intermediate result are collocated inside the graph
- 2. When linked nodes satisfy the same partial condition, only the first one will cause a 
- cascade of messages, those marked later wil send no messages.
- 3. If a query needs to modified by changing a condition, only the changed or new condition 
- needs to streamed into the graph, the other ones are already distributed among the nodes.
- 3. Query could be persisted in the graph if needed.  Graph links could be added and messages
- pass through the links to obtain new matches.  Also a condition that changed by affecting new
- nodes will only needed to be rerun to those nodes.
+Each of these problems could potentially have millions of nodes satisfying 
+some of the conditions. Finding bodes that directly satisfy a given criteria 
+is a solved problem that  can be easily handled by relational databases 
+or  search engines like ElasticSearch.  Graph based searches can provide 
+list of liked candidates that themselves could be in millions. The problem
+could be reduced to intersections of huge sets.
+
+One can deal with problems like these by streaming.  Each set of nodes can be identified
+in an traditional external system and the results can be streamed to graph, generating 
+an appropriate graph message for each marked node.
+
+At the firs glance using graph as network of messages seems to not have any benefits. It does not provide
+a magical reduction of needed processing, at least not in generic cases. But still there are
+benefits:
+1. All the intermediate result are collocated inside the graph
+2. When linked nodes satisfy the same partial condition, only the first one will cause a 
+cascade of messages, those marked later wil send no messages.
+3. If a query needs to modified by changing a condition, only the changed or new condition 
+needs to streamed into the graph, the other ones are already distributed among the nodes.
+3. Query could be persisted in the graph if needed.  Graph links could be added and messages
+pass through the links to obtain new matches.  Also a condition that changed by affecting new
+nodes will only needed to be rerun to those nodes.
   
   ## Toy Messaging Graph
   
