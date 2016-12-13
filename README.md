@@ -27,8 +27,8 @@ A message can carry a condition based on itself and other messages received by a
  information movies and actors can be streamed from a third party
  provider.
  
- 2. In a graph that contains companies as nodes, ownership links,
- "trades with" links find all the companies in New York City that 
+ 2. In a graph that contains companies as nodes, ownership links and
+ "trades with" links, find all the companies in New York City that 
  have a parent company on the West Coast but no company in
  their company hierarchy trades with any company that is
  in some black list.
