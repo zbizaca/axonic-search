@@ -27,8 +27,8 @@ A message can carry a condition based on itself and other messages received by a
  information movies and actors can be streamed from a third party
  provider.
  
- 2. In a graph that contains companies as nodes, ownership links,
- "trades with" links find all the companies in New York City that 
+ 2. In a graph that contains companies as nodes, ownership links and
+ "trades with" links, find all the companies in New York City that 
  have a parent company on the West Coast but no company in
  their company hierarchy trades with any company that is
  in some black list.
@@ -52,18 +52,21 @@ an appropriate graph message for each marked node.
 At the firs glance using graph as network of messages seems to not have any benefits. It does not provide
 a magical reduction of needed processing, at least not in generic cases. But still there are
 benefits:
+
 1. All the intermediate result are collocated inside the graph
+
 2. When linked nodes satisfy the same partial condition, only the first one will cause a 
-cascade of messages, those marked later wil send no messages.
-3. If a query needs to modified by changing a condition, only the changed or new condition 
-needs to streamed into the graph, the other ones are already distributed among the nodes.
-3. Query could be persisted in the graph if needed.  Graph links could be added and messages
-pass through the links to obtain new matches.  Also a condition that changed by affecting new
-nodes will only needed to be rerun to those nodes.
+ cascade of messages, those marked later wil send no messages.
+
+3. If a query needs to be modified by changing a condition, only the changed or new condition 
+ needs to streamed into the graph.
+ 
+4. Query could be persisted in the graph if needed.  Graph links could be added and messages
+ pass through the links to obtain new matches.  A condition that only changed by affecting new
+ nodes will only needed to be rerun to those nodes.
   
-  ## Toy Messaging Graph
+## Toy Messaging Graph
   
   It will use Akka actors as nodes.
   
   Under Construction.
- 
