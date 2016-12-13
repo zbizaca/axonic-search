@@ -59,10 +59,10 @@ benefits:
  cascade of messages, those marked later wil send no messages.
 
 3. If a query needs to be modified by changing a condition, only the changed or new condition 
- needs to streamed into the graph, the other ones are already distributed among the nodes.
-
+ needs to streamed into the graph.
+ 
 4. Query could be persisted in the graph if needed.  Graph links could be added and messages
- pass through the links to obtain new matches.  Also a condition that changed by affecting new
+ pass through the links to obtain new matches.  A condition that only changed by affecting new
  nodes will only needed to be rerun to those nodes.
   
 ## Toy Messaging Graph
