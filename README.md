@@ -17,7 +17,7 @@ A message can carry a condition based on itself and other messages received by a
  other nodes that are linked in a specified can be performed by mapping those 
  conditions and relations into graph messages.
  
- ### Motivation
+### Motivation
  
  Here are some examples:
  
