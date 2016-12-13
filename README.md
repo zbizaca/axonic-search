@@ -54,12 +54,15 @@ a magical reduction of needed processing, at least not in generic cases. But sti
 benefits:
 
 1. All the intermediate result are collocated inside the graph
+
 2. When linked nodes satisfy the same partial condition, only the first one will cause a 
-cascade of messages, those marked later wil send no messages.
-3. If a query needs to modified by changing a condition, only the changed or new condition 
-needs to streamed into the graph, the other ones are already distributed among the nodes.
-3. Query could be persisted in the graph if needed.  Graph links could be added and messages
-pass through the links to obtain new matches.  Also a condition that changed by affecting new
+ cascade of messages, those marked later wil send no messages.
+
+3. If a query needs to be modified by changing a condition, only the changed or new condition 
+ needs to streamed into the graph, the other ones are already distributed among the nodes.
+
+4. Query could be persisted in the graph if needed.  Graph links could be added and messages
+ pass through the links to obtain new matches.  Also a condition that changed by affecting new
  nodes will only needed to be rerun to those nodes.
   
 ## Toy Messaging Graph
